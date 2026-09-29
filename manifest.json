@@ -1,0 +1,10 @@
+{
+  "id": "always-stacked-tabs",
+  "name": "Always stacked tabs",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "Keeps main-area tab groups stacked (Andy Matuschak-style sliding panes), even after restarts or layout rebuilds.",
+  "author": "vladola",
+  "authorUrl": "https://github.com/vladola",
+  "isDesktopOnly": false
+}
