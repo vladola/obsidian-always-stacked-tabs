@@ -1,28 +1,23 @@
-# Always stacked tabs
+# obsidian-plugins
 
-A tiny Obsidian plugin that keeps the tab groups in the main editor area **stacked**, so notes
-slide in to the right like Andy Matuschak's notes site.
+Small personal Obsidian plugins, one folder each under `plugins/`. No build step: each plugin is
+plain `main.js` + `manifest.json` (+ optional `styles.css`).
 
-Obsidian's built-in *Stack tabs* is a per-tab-group toggle. It's lost whenever the layout is rebuilt
-(on startup, by plugins such as Homepage that replace open notes, by new splits). This plugin
-re-applies it on layout ready and on every `layout-change`.
+| Plugin | What it does |
+| --- | --- |
+| [always-stacked-tabs](plugins/always-stacked-tabs) | Keeps main-area tab groups stacked (Andy Matuschak-style sliding panes) across restarts and layout rebuilds |
 
-Pairs well with [Open Tab Settings](https://github.com/jesse-r-s-hines/obsidian-open-tab-settings)
-(open links in a new tab next to the current one).
+## Install into a vault
 
-## Install
+Quit Obsidian first, then:
 
-**Manual:** copy `main.js` and `manifest.json` into
-`<vault>/.obsidian/plugins/always-stacked-tabs/`, then enable *Always stacked tabs* under
-Settings → Community plugins.
+```bash
+./install.sh <plugin-id> "/path/to/vault"     # e.g. ./install.sh always-stacked-tabs ~/MyVault
+./install.sh --all "/path/to/vault"
+```
 
-**BRAT:** add `vladola/obsidian-always-stacked-tabs` as a beta plugin.
-
-## Caveat
-
-It uses Obsidian's internal `WorkspaceTabs.setStacked()` / `isStacked` (the same method behind the
-*Stack tabs* menu item). They aren't part of the public API, so a future Obsidian release could
-change them. If it does, the plugin silently does nothing.
+This copies the plugin into `<vault>/.obsidian/plugins/<id>/` and enables it in
+`community-plugins.json`. Community plugins must be turned on in the vault (Settings → Community plugins).
 
 ## License
 
